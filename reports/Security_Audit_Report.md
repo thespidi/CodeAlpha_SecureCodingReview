@@ -202,3 +202,25 @@ In addition, the screenshots of successful login, incorrect password, input vali
 10. Security Limitations
 
 This is a local educational demonstration, not acceptable as a production-grade authentication platform. Future improvement would be on environmental variables for credentials, HTTPS, secure session or token management, secure HTTP headers, and additional monitoring.
+
+## Static Code Analysis
+
+### Tool Used
+- ESLint 10.14.0
+- eslint-plugin-security
+
+### Analysis Performed
+ESLint was configured to check JavaScript files in both the vulnerable and secure applications.
+
+The following security rules were enabled:
+- detect-eval-with-expression
+- detect-non-literal-regexp
+- detect-unsafe-regex
+- detect-object-injection
+
+### Results
+- Vulnerable application: ESLint executed successfully with no warnings under the selected rules.
+- Secure application: ESLint executed successfully with no warnings under the selected rules.
+
+### Limitations
+No warnings does not guarantee that an application is completely secure. Manual code review and functional security testing were also performed.
